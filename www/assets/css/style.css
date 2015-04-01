@@ -510,3 +510,27 @@ input.ng-invalid.ng-dirty {
     -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(233, 19, 18, 0.60);
     box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(233, 19, 18, 0.60);
 }
+.error-wrap {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid rgba(233, 19, 18, 0.60);
+    background-color: #ff8e97;
+    color: #fff;
+    text-align: center;
+}
+.no-data {
+    padding: 20px;
+    font-size: 18px;
+    text-align: center;
+}
+
+.be-first {
+    color: #006600;
+}
+
+.be-first:hover,
+.be-first:active {
+    cursor: pointer;
+    color: #009900;
+    text-decoration: underline;
+}

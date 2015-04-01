@@ -1,5 +1,5 @@
 <div class="container-fluid" id="cashing-cont">
-    @if(isset($refill))
+    @if(isset($cashing) && count($cashing))
         <div class="row">
             <div class="col-xs-3">
                 <span class="heading">Дата добавления</span>
@@ -14,7 +14,7 @@
                 <span class="heading">Коментарий</span>
             </div>
         </div>
-        @foreach($refill as $item)
+        @foreach($cashing as $item)
             <div class="row">
                 <div class="col-xs-3">
                     <div class="date-time">{{{$item->created_at}}}</div>
@@ -36,5 +36,13 @@
                 </div>
             </div>
         @endforeach
+    @else
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="no-data">
+                    <p>Здесь пока нет обьявлений. Ты можешь стать <span class="be-first" ng-click="beFirst('cashing')">первым.</span></p>
+                </div>
+            </div>
+        </div>
     @endif
 </div>

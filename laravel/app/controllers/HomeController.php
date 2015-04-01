@@ -35,40 +35,48 @@ class HomeController extends BaseController {
     {
         // refills , cashing
         $data = $this->getData();
-        $data['flag'] = 'refill';
+        $data['flag'] = 'cashing';
 
         return View::make('exchange', $data);
     }
 
     public function addExchange()
     {
+        $response = array();
+        $response['errors'] = array();
+
         $max_counter = 20;
 
-        $count = Exchange::all()->count();
 
         $data = Input::all();
 
+        $count = Exchange::where('ad_type', '=', $data['ad_type'])->count();
+//        return $count;
         $validation = Validator::make($data, Exchange::getValidationRules());
 
         // validate all data before adding
-        if($validation->fails()){
-            return Redirect::back()->withErrors($validation)->withInput();
+        if($validation->fails()) {
+            $messages = $validation->messages();
+            foreach($messages->all() as $message) {
+                $response['errors'][] = $message;
+            }
+            return json_encode($response);
         } else {
             if ($count > $max_counter) {
-                $first_id = Exchange::first()->id;
+                $first_id = Exchange::where('ad_type', '=', $data['ad_type'])->orderBy('created_at', 'asc')->first()->id;
                 Exchange::destroy($first_id);
             }
-            Exchange::create($data);
+            $last_row = Exchange::create($data);
         }
 
-        $rows = $this->getData();
-        var_dump($rows);
+//        $rows = $this->getData();
+//        var_dump($last_row);
 
 
         // return last html row
         // return ad_type
         // return error
-        return $rows;
+        return $last_row;
     }
 
 }
