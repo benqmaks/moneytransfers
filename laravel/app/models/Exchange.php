@@ -21,6 +21,8 @@ class Exchange extends Eloquent {
         'phone',
         'summ',
         'money_type',
+        'city',
+        'commission',
         'ad_type',
         'comment'
     );
@@ -34,7 +36,6 @@ class Exchange extends Eloquent {
         $validation['ad_type'] = 'required|in:'. implode(',',array_keys(Exchange::getAdType()));
 
         return $validation;
-
     }
 
 }

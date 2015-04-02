@@ -30,49 +30,5 @@
     </div>
 </div>
 
-<script id="cashingTemplate" type="text/ng-template">
-    <div class="row">
-        <div class="col-xs-3">
-            <div class="date-time">@{{cashing.created_at}}</div>
-        </div>
-        <div class="col-xs-3">
-            <span class="summ">@{{cashing.summ}}</span>
-            <span class="type">@{{cashing.money_type}}</span>
-        </div>
-        <div class="col-xs-3">
-            <div class="phone">
-                <span class="phone-first">@{{cashing.phone}}</span>
-                <span class="phone-second"></span>
-            </div>
-        </div>
-        <div class="col-xs-3">
-            <div class="comment">
-                <p>@{{cashing.comment}}</p>
-            </div>
-        </div>
-    </div>
-</script>
-
-<script id="refillTemplate" type="text/ng-template">
-    <div class="row">
-        <div class="col-xs-3">
-            <div class="date-time">@{{refill.created_at}}</div>
-        </div>
-        <div class="col-xs-3">
-            <span class="summ">@{{refill.summ}}</span>
-            <span class="type">@{{refill.money_type}}</span>
-        </div>
-        <div class="col-xs-3">
-            <div class="phone">
-                <span class="phone-first">@{{refill.phone}}</span>
-                <span class="phone-second"></span>
-            </div>
-        </div>
-        <div class="col-xs-3">
-            <div class="comment">
-                <p>@{{refill.comment}}</p>
-            </div>
-        </div>
-    </div>
-</script>
+    @include('_ngTemplates')
 @endsection

@@ -425,11 +425,19 @@ h3.color1 {
     border: 1px solid rgb(95, 135, 14);
     color: #CFCFCF;
 }
-.container-fluid .row {
+.container-fluid#exchangeForm .row {
     margin-bottom: 15px;
 }
-.container-fluid .row:first-child {
-    margin-top: 15px;
+.container-fluid#refill-cont .row p,
+.container-fluid#cashing-cont .row p {
+    margin: 0;
+}
+.container-fluid#refill-cont .row > div > *,
+.container-fluid#cashing-cont .row > div > * {
+    display: inline-block;
+    min-height: 60px;
+    padding-top: 7.5px;
+    padding-bottom: 7.5px;
 }
 
 #refill-cont .row,
@@ -454,7 +462,6 @@ h3.color1 {
     font-size: 20px;
     display: inline-block;
     line-height: 30px;
-    margin-bottom: 15px;
 }
 
 .sign {
@@ -522,6 +529,10 @@ input.ng-invalid.ng-dirty {
     padding: 20px;
     font-size: 18px;
     text-align: center;
+    width: 100%;
+}
+.no-data p {
+    margin: 10px 0 !important;
 }
 
 .be-first {
@@ -533,4 +544,27 @@ input.ng-invalid.ng-dirty {
     cursor: pointer;
     color: #009900;
     text-decoration: underline;
+}
+
+span.phone,
+span.phone.phone-shown {
+    color: inherit;
+    cursor: default;
+    border: none;
+}
+
+span.phone.phone-hidden {
+    color: #006600;
+    cursor: pointer;
+    border-bottom:1px dashed #006600;
+}
+
+span.phone.phone-hidden:hover,
+span.phone.phone-hidden:active {
+    border-bottom: none;
+    color: #009900;
+}
+
+.row.recently-added {
+    background-color: #7e7e7e;
 }

@@ -3,9 +3,9 @@
 <head>
     <title></title>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="{{URL::asset('assets/js/vendors/jquery-ui/jquery-ui.min.css')}}"/>
     <link rel="stylesheet" href="{{URL::asset('assets/css/vendors/bootstrap.min.css')}}"/>
     <link rel="stylesheet" href="{{URL::asset('assets/css/vendors/bootstrap-theme.min.css')}}"/>
-    <link rel="stylesheet" href="{{URL::asset('assets/css/style.css')}}" type="text/css" media="all">
     <link rel="stylesheet" href="{{URL::asset('assets/css/style.css')}}" type="text/css" media="all">
 </head>
 <body ng-app="app">
@@ -32,10 +32,10 @@
                             <li><a href="/"><span>Главная</span></a></li>
                         @endif
 
-                        @if(Route::currentRouteName() == 'contacts')
-                            <li class="active"><a href="/contacts"><span>Контакты</span></a></li>
+                        @if(Route::currentRouteName() == 'exchange')
+                            <li class="active"><a href="/exchange"><span>Обменник</span></a></li>
                         @else
-                            <li><a href="/contacts"><span>Контакты</span></a></li>
+                            <li><a href="/exchange"><span>Обменник</span></a></li>
                         @endif
                     </ul>
                 </div>
@@ -130,8 +130,10 @@
 
 {{--VENDORS--}}
 <script src="{{URL::asset('assets/js/vendors/jquery-2.1.3.min.js')}}"></script>
+<script src="{{URL::asset('assets/js/vendors/jquery-ui/jquery-ui.min.js')}}"></script>
 <script src="{{URL::asset('assets/js/vendors/bootstrap.min.js')}}"></script>
 <script src="{{URL::asset('assets/js/vendors/angular.min.js')}}"></script>
+<script src="//vk.com/js/api/xd_connection.js?2"></script>
 
 
 {{--APPLICATION--}}

@@ -19,6 +19,8 @@ class CreateExchangesTable extends Migration {
             $table->string('phone');
             $table->string('summ');
             $table->string('money_type');
+            $table->string('city');
+            $table->string('commission')->default('0');
             $table->enum('ad_type',['refill','cashing']);
             $table->string('comment');
 		});
